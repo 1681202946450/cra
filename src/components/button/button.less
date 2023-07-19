@@ -1,6 +1,55 @@
 @class-prefix-button: ~'fgdm-button';
 
 .@{class-prefix-button} {
+
+  // Currently internal variables:
+  --fgdm-radius-s: 4px;
+  --fgdm-radius-m: 8px;
+  --fgdm-radius-l: 12px;
+
+  --fgdm-font-size-1: 9px;
+  --fgdm-font-size-2: 10px;
+  --fgdm-font-size-3: 11px;
+  --fgdm-font-size-4: 12px;
+  --fgdm-font-size-5: 13px;
+  --fgdm-font-size-6: 14px;
+  --fgdm-font-size-7: 15px;
+  --fgdm-font-size-8: 16px;
+  --fgdm-font-size-9: 17px;
+  --fgdm-font-size-10: 18px;
+
+  // variables should be exposed to users:
+  --fgdm-color-primary: #1677ff;
+  --fgdm-color-success: #00b578;
+  --fgdm-color-warning: #ff8f1f;
+  --fgdm-color-danger: #ff3141;
+
+  --fgdm-color-text: #333333;
+  --fgdm-color-text-secondary: #666666;
+  --fgdm-color-weak: #999999;
+  --fgdm-color-light: #cccccc;
+  --fgdm-color-border: #eeeeee;
+  --fgdm-color-background: #ffffff;
+
+  // Deprecated. We use `--fgdm-color-text-light-solid` in code
+  // but keep here for compatible
+  --fgdm-color-white: #ffffff;
+  --fgdm-color-box: #f5f5f5;
+
+  --fgdm-color-text-light-solid: var(--fgdm-color-white);
+  --fgdm-color-text-dark-solid: #000000;
+  --fgdm-color-fill-content: var(--fgdm-color-box);
+
+  --fgdm-font-size-main: var(--fgdm-font-size-5);
+
+  --fgdm-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+
+  // The variables below are deprecated and only exist for backward compatibility:
+  --fgdm-border-color: var(--fgdm-color-border);
+
+  
   --color: var(--fgdm-color-text-light-solid);
 
   --text-color: var(--fgdm-button-text-color, var(--fgdm-color-text));

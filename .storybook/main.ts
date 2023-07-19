@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+const path = require('path');
 const config: StorybookConfig = {
   stories: ["../src/components/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -26,6 +27,16 @@ const config: StorybookConfig = {
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
+  },
+  webpackFinal: async (config:any ) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['sass-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
+    // Return the altered config
+    return config;
   },
   docs: {
     autodocs: "tag",
