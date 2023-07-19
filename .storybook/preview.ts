@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-// import "../src/global/global.less";
+import "../src/global/global.less";
 
 const preview: Preview = {
   parameters: {
