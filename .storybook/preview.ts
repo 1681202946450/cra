@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import "../src/global/theme-default.less";
 
 const preview: Preview = {
   parameters: {
