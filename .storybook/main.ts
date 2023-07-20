@@ -28,14 +28,13 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  webpackFinal: async (config:any ) => {
+  webpackFinal: async (config:any) => {
     config.module.rules.push({
-      test: /\.scss$/,
-      use: ['sass-loader'],
-      include: path.resolve(__dirname, '../'),
+      test: /\.(js|jsx)$/,
+      enforce: 'pre',
+      use: ['source-map-loader'],
     });
 
-    // Return the altered config
     return config;
   },
   docs: {
