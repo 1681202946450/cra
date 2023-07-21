@@ -13,19 +13,31 @@ type NativeButtonProps = React.DetailedHTMLProps<
 >
 
 export type ButtonProps = {
-  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
-  fill?: 'solid' | 'outline' | 'none'
-  size?: 'mini' | 'small' | 'middle' | 'large'
+  /** 按钮的颜色 */
+  color?: 'white' | 'gradient' | 'secondary' | 'weak' | 'strong'
+  // /** 填充模式 */
+  // fill?: 'solid' | 'outline' | 'none'
+  /** 按钮大小 */
+  size?: 'mini'|'smaller'|'small'|'middleSmall'|'middleLarge'|'middle'|'large'|'larger'|'max'
+  /** 是否是块级元素 */
   block?: boolean
+  /** 是否处于加载状态，'auto' 模式会监听 onClick 的 Promise 状态自动更新 loading */
   loading?: boolean | 'auto'
+  /** 加载状态下额外展示的文字 */
   loadingText?: string
+  /** 加载状态下的 icon 图标 */
   loadingIcon?: React.ReactNode
+  /** 是否禁用 */
   disabled?: boolean
+  /** 点击事件 */
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void | Promise<void> | unknown
+  /** 原生 button 元素的 type 属性 */
   type?: 'submit' | 'reset' | 'button'
+  /** 按钮的形状 */
   shape?: 'default' | 'rounded' | 'rectangular'
+  /** 按钮内容 */
   children?: React.ReactNode
 } & Pick<
   NativeButtonProps,
@@ -45,16 +57,17 @@ export type ButtonRef = {
 }
 
 const defaultProps: ButtonProps = {
-  color: 'default',
-  fill: 'solid',
+  color: 'strong',
   block: false,
   loading: false,
   loadingIcon: <DotLoading color='currentColor' />,
   type: 'button',
   shape: 'default',
-  size: 'middle',
+  size: 'large',
 }
-
+/** 用于开始一个即时操作。 
+ *  标记了一个或封装一组操作命令，响应用户点击行为，触发相应的业务逻辑。
+ */
 export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
   const props = mergeProps(defaultProps, p)
   const [innerLoading, setInnerLoading] = useState(false)
@@ -94,14 +107,22 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
       className={classNames(
         classPrefix,
         props.color ? `${classPrefix}-${props.color}` : null,
+        props.size ? `${classPrefix}-${props.color}-${props.size}` : null,
+
         {
           [`${classPrefix}-block`]: props.block,
           [`${classPrefix}-disabled`]: disabled,
-          [`${classPrefix}-fill-outline`]: props.fill === 'outline',
-          [`${classPrefix}-fill-none`]: props.fill === 'none',
+          // [`${classPrefix}-fill-outline`]: props.fill === 'outline',
+          // [`${classPrefix}-fill-none`]: props.fill === 'none',
           [`${classPrefix}-mini`]: props.size === 'mini',
+          [`${classPrefix}-smaller`]: props.size === 'smaller',
           [`${classPrefix}-small`]: props.size === 'small',
+          [`${classPrefix}-middleSmall`]: props.size === 'middleSmall',
+          [`${classPrefix}-middleLarge`]: props.size === 'middleLarge',
+          [`${classPrefix}-middle`]: props.size === 'middle',
           [`${classPrefix}-large`]: props.size === 'large',
+          [`${classPrefix}-larger`]: props.size === 'larger',
+          [`${classPrefix}-max`]: props.size === 'max',
           [`${classPrefix}-loading`]: loading,
         },
         `${classPrefix}-shape-${props.shape}`
@@ -123,4 +144,3 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
     </button>
   )
 })
-

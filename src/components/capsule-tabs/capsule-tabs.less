@@ -1,0 +1,52 @@
+@class-prefix-capsule-tabs: ~'fgdm-capsule-tabs';
+
+.@{class-prefix-capsule-tabs} {
+  position: relative;
+  // Hack for auto scroll fail when the parent element is a flex layout
+  min-width: 0;
+
+  &-header {
+    position: relative;
+    padding: 12px 6px;
+    border-bottom: solid 1px var(--fgdm-color-border);
+  }
+
+  &-tab-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+  }
+  &-tab-wrapper {
+    flex: auto;
+    padding: 0 6px;
+  }
+  &-tab {
+    position: relative;
+    padding: 8px 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: var(--fgdm-font-size-7);
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--fgdm-color-fill-content);
+  }
+  &-tab-active {
+    color: var(--fgdm-color-text-light-solid);
+    background-color: var(--fgdm-color-primary);
+  }
+  &-tab-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &-content {
+    padding: 12px;
+  }
+}

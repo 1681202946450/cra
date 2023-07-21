@@ -1,0 +1,17 @@
+.fgdm-avatar {
+  --size: var(--fgdm-avatar-size, 44px);
+  --border-radius: var(--fgdm-avatar-border-radius, 4px);
+
+  border-radius: var(--border-radius);
+
+  &.fgdm-image {
+    --width: var(--size);
+    --height: var(--size);
+  }
+
+  &-fallback {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+}

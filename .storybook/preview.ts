@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import "../src/global/global.less";
+import "../src/global/theme-default.less";
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +10,16 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    // 侧边栏排序（待实现）
+    // option: {
+    //   storySort: {
+    //     order: [
+    //       '基础组件',
+    //             ['Button 按钮'],
+    //       '导航组件'
+    //     ]
+    //   }
+    // }
   },
 };
 

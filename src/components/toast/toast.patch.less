@@ -1,0 +1,18 @@
+@class-prefix-toast: ~'fgdm-toast';
+
+.@{class-prefix-toast}-mask {
+  .@{class-prefix-toast}-main {
+    font-size: 15px;
+  }
+}
+
+.@{class-prefix-toast}-loading {
+  && {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 8px;
+    .fgdm-spin-loading-fill {
+      stroke: #ffffff;
+    }
+  }
+}

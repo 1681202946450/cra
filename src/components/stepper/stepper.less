@@ -1,0 +1,79 @@
+@class-prefix-stepper: ~'fgdm-stepper';
+
+.@{class-prefix-stepper} {
+  --height: 18px;
+  --input-width: 44px;
+  --input-font-size: var(--fgdm-font-size-main);
+  --input-font-color: var(--fgdm-color-text);
+  --input-background-color: var(--fgdm-color-fill-content);
+  --border-radius: 2px;
+  --border: none;
+  --border-inner: solid 2px transparent;
+  --active-border: var(--border);
+  --button-font-size: var(--fgdm-font-size-7);
+  --button-text-color: var(--fgdm-color-primary);
+  --button-background-color: var(--fgdm-color-fill-content);
+  // --button-width: var(--height, 18px);
+  --button-width:18px;
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: calc(var(--input-width) + 2 * var(--button-width));
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background: transparent;
+  &-active {
+    border: var(--active-border);
+  }
+
+  &-middle {
+    // flex: 1;
+    border-left: var(--border-inner);
+    border-right: var(--border-inner);
+  }
+
+  .@{class-prefix-stepper}-input {
+    height: var(--height);
+    width: var(--input-width);
+    --background-color: var(--input-background-color);
+    --font-size: var(--input-font-size);
+    --color: var(--input-font-color);
+    --text-align: center;
+    --background-color:transparent;
+  }
+
+  &-minus,
+  &-plus {
+    width: var(--button-width) !important;
+    height: var(--height) !important;
+    padding: 0;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    font-size: var(--button-font-size);
+    --border-width: 0;
+    background-color: var(--fgdm-color-strong) !important;
+    padding: 0 !important;
+    &:disabled {
+      color: var(--fgdm-color-weak);
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:white;
+      font-size: 16px;
+    }
+  }
+
+  &-minus {
+    border-radius: 50% !important;
+  }
+
+  &-plus {
+    border-radius: 50% !important;
+  }
+}
