@@ -1,6 +1,6 @@
 {
-  "name": "fqb-compoents",
-  "version": "0.1.0",
+  "name": "cr-a-5759",
+  "version": "0.2.5",
   "private": false,
   "licence":"MIT",
   "main":"src/index.ts",
@@ -34,7 +34,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pub": "npm run build && npm publish --access=public"
   },
   "eslintConfig": {
     "extends": [
