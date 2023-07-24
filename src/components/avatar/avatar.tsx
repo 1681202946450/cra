@@ -3,8 +3,8 @@ import { NativeProps, withNativeProps } from '../../utils/native-props'
 import { mergeProps } from '../../utils/with-default-props'
 import { Fallback } from './fallback'
 import Image, { ImageProps } from '../image'
-import {  Female } from "./fallbacks";
 import { Male } from './fallbacks/male'
+import { Female } from './fallbacks/female'
 
 const classPrefix = 'fgdm-avatar'
 
