@@ -4,6 +4,8 @@
 /node_modules
 /__MACOSX
 /.pnp
+/lib
+/report
 .pnp.js
 # testing
 /coverage
@@ -22,3 +24,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules/
+package-lock.json

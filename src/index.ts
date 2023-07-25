@@ -1,4 +1,5 @@
-import '../src/global/theme-default.less'
+// import '../src/global/theme-default.less'
+import './global'
 export { default as Avatar } from './components/avatar'
 export type { AvatarProps } from './components/avatar'
 export { default as Badge } from './components/badge'
