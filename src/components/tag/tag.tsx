@@ -1,17 +1,10 @@
-import React, { CSSProperties, FC } from 'react'
+import React, { FC } from 'react'
 import { mergeProps } from '../../utils/with-default-props'
 import { NativeProps, withNativeProps } from '../../utils/native-props'
 import classNames from 'classnames'
 
 const classPrefix = `fgdm-tag`
 
-const colorRecord: Record<string, string> = {
-  default: '#666666',
-  skin: 'var(--fgdm-color-primary, #1677ff)',
-  success: 'var(--fgdm-color-success, #00b578)',
-  warning: 'var(--fgdm-color-warning, #ff8f1f)',
-  danger: 'var(--fgdm-color-danger, #ff3141)',
-}
 
 export type TagProps = {
   color?:

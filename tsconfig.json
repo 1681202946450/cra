@@ -1,39 +1,35 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "rootDirs": ["src", "config"],
+    "rootDirs": ["src"],
     "target": "ES6",
+    "module": "esnext",// 格式
     "moduleResolution": "node",
     "jsx": "react",
     "allowJs": true,
-    "declaration": false,
+    "declaration":false,
     "esModuleInterop": true,
     "importHelpers": true,
     "downlevelIteration": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "baseUrl": "./",
     "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2016", "DOM"],
-    "paths": {
-      "antd-mobile": ["src/index.ts"],
-      "antd-mobile/src/*": ["src/*"],
-      "antd-mobile/es/*": ["src/*"],
-      "demos": ["src/demos/index.ts"],
-      "testing": ["src/tests/testing"]
-    },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "lib", "es", "dist", ".dumi"],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS",
-      "resolveJsonModule": true,
-      "noImplicitAny": false
-    }
-  }
+  "allowArbitraryExtensions":true,
+
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "lib", "es", "dist","./src/**/*.stories.tsx",],
+  // "ts-node": {
+  //   "compilerOptions": {
+  //     "module": "CommonJS",
+  //     "resolveJsonModule": true,
+  //     "noImplicitAny": false
+  //   }
+  // }
 }

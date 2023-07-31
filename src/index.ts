@@ -1,4 +1,3 @@
-// import '../src/global/theme-default.less'
 import './global'
 export { default as Avatar } from './components/avatar'
 export type { AvatarProps } from './components/avatar'
@@ -20,4 +19,3 @@ export { default as Tag } from './components/tag'
 export type { TagProps } from './components/tag'
 export { default as Toast } from './components/toast'
 export type { ToastShowProps } from './components/toast'
-
