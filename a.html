@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动幅</title>
+		<style type="text/css">
+			* {
+	            margin: 0;
+	            padding: 0;
+	            text-decoration: none;
+	        }
+	        li{
+	        	list-style: none;
+	        }                
+	        #container {
+	            position: relative;
+	            width: 600px;
+	            height: 400px;
+	            border: 1px solid #333;
+	            overflow: hidden;
+	            margin: 0 auto;
+	        }        
+	        #list {
+	            position: absolute;
+	            left: 0;
+	            width: 20000px;
+	            height: 200px;
+	            color: #000;
+	            font-size: 30px;
+	            font-weight: bold;
+	            display:flex;
+	        }	
+	        #list li{
+	        	margin-left: 600px;
+	        }				
+		</style>
+	</head>
+	<body>
+		 <div id="container">
+	        <ul id="list">
+	            <li>浏览器兼容问题及解决方法汇总</li>
+	 			<li>入门级---Vue脚手架(vue-cli)搭建过程---详版</li>
+	 			<li>js基础知识总结整理</li>
+	        </ul>
+    	</div>
+	</body>		
+    <script type="text/javascript">
+        window.onload = function() {                      //要加上这段、页面加载自动执行
+        var list = document.getElementById('list');
+        var aLi = document.getElementsByTagName('li');
+                
+        /*设置以下变量*/
+        var n = list.getElementsByTagName('li').length;  //获取ul下面li的个数（用来求所有margin）
+        var newLeft = 0;                                 //改变ul的left的值
+        var speed = 1;                                  //设置的速度参数
+        var s = 0;                                      //读取li的宽总和
+        var num = 0;                                    //计时器中的num自增变量
+        
+        for(var i=0;i<aLi.length;i++){
+            s += parseInt(aLi[i].offsetWidth);         //offsetWidth读取的是内容高度+内边距+边宽（不包含外间距margin）
+        }
+        var total = s + n*600;                        //获取到的所有li的宽的总和再加上他们的margin
+        
+        /*计时器修改left的值*/
+        var timer = setInterval(function () {
+          newLeft = -speed*num;			        
+           num++;
+           /*达到设置的total值之后，num=0,newLeft继续从0开始*/
+           if(num >= total){
+             num = 0;
+           }
+           list.style.left = newLeft + 'px';
+        }, 1)			
+     }
+    </script>
+            
+</html>
